@@ -1,4 +1,5 @@
 import profilePictureSrc from "../assets/images/profile-picture.png";
+import cameraIconSrc from "../assets/icons/camera-icon.png";
 import genereateStepCounter from "./stepCounterTop";
 
 const generateYourProfilePage = () => {
@@ -21,6 +22,7 @@ const generateYourProfilePage = () => {
 
   const picture = getImage(profilePictureSrc);
   profilePicture.appendChild(picture);
+  profilePicture.appendChild(getIcon());
 
   signupFormSubmitButton.appendChild(createSubmitButton());
 
@@ -39,6 +41,14 @@ const getImage = (pictureSrc) => {
   picture.src = pictureSrc;
 
   return picture;
+};
+
+const getIcon = () => {
+  const icon = new Image(40, 40);
+  icon.src = cameraIconSrc;
+
+  icon.classList.add("camera-icon");
+  return icon;
 };
 
 const createSignupForm = () => {
