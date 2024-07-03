@@ -1,0 +1,26 @@
+@import "colors";
+
+.form-submission-button {
+  button {
+    background-color: $primary-light-green;
+    width: 390px;
+    height: 52px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+.setup-page-info {
+  h4 {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
