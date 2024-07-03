@@ -13,14 +13,64 @@
   }
 }
 
-.setup-page-info {
-  h4 {
-    font-weight: 500;
-    font-size: 16px;
+.your-profile-page-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .back-button {
+    margin-bottom: 24px;
   }
 
-  p {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.8);
+  .step-info {
+    margin-bottom: 32px;
+  }
+
+  .setup-page-info {
+    margin-bottom: 24px;
+
+    h4 {
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .profile-picture {
+    margin: 0 auto 34px;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .profile-signup-form {
+    margin-bottom: 40px;
+    width: 100%;
+
+    form {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin: 16px 0 8px;
+        font-weight: 500;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        height: 44px;
+        border: 0.5px solid $form-border-light-grey;
+        border-radius: 6px;
+        padding: 12px;
+      }
+    }
   }
 }
