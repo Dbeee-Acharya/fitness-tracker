@@ -1,10 +1,11 @@
 import profilePictureSrc from "../assets/images/profile-picture.png";
 import cameraIconSrc from "../assets/icons/camera-icon.png";
+
 import {
   genereateStepCounter,
   createBackButton,
   createSubmitButton,
-} from "./headingInfo";
+} from "./components";
 
 const generateYourProfilePage = () => {
   const mainSection = document.getElementById("main-section");
@@ -19,7 +20,6 @@ const generateYourProfilePage = () => {
   yourProfileInfo.classList.add("setup-page-info");
   profilePicture.classList.add("profile-picture");
   signupFormSubmitButton.classList.add("form-submission-button");
-  signupFormSubmitButton.setAttribute("id", "your-profile-button");
 
   yourProfileInfo.innerHTML =
     "<h4>Your Profile</h4> \n <p>Update your profile to get better fitness result from <br> trainer</p>";
@@ -32,7 +32,7 @@ const generateYourProfilePage = () => {
   profilePicture.appendChild(profilePictureContainer);
   profilePicture.appendChild(getIcon());
 
-  signupFormSubmitButton.appendChild(createSubmitButton());
+  signupFormSubmitButton.appendChild(createSubmitButton("your-profile-button"));
 
   yourProfilePageContainer.appendChild(createBackButton());
   yourProfilePageContainer.appendChild(genereateStepCounter(1));

@@ -21,8 +21,9 @@ const createBackButton = () => {
   return backButtonContainer;
 };
 
-const createSubmitButton = () => {
+const createSubmitButton = (buttonId, buttonClass) => {
   const submitButton = document.createElement("button");
+  submitButton.type = "submit";
 
   submitButton.innerHTML = 'Continue <i class = "fa-solid fa-arrow-right"></i>';
 

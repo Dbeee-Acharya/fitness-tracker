@@ -3,7 +3,7 @@ import {
   createBackButton,
   genereateStepCounter,
   createSubmitButton,
-} from "./headingInfo";
+} from "./components";
 
 const generatePersonalDetailPage = () => {
   const mainSection = document.getElementById("main-section");
@@ -162,12 +162,19 @@ const generatePersonalDetailPage = () => {
   personalDetailsForm.appendChild(heightWeightContainer);
   personalDetailsForm.appendChild(healthUpdatesContainer);
 
+  const signupFormSubmitButton = document.createElement("div");
+  signupFormSubmitButton.classList.add("form-submission-button");
+
+  signupFormSubmitButton.appendChild(
+    createSubmitButton("personal-details-submit-button"),
+  );
+
   //adding elements to page container
   personalDetailsPageContainer.appendChild(createBackButton());
   personalDetailsPageContainer.appendChild(genereateStepCounter(2));
   personalDetailsPageContainer.appendChild(personalDetailsHeading);
   personalDetailsPageContainer.appendChild(personalDetailsForm);
-  personalDetailsPageContainer.appendChild(createSubmitButton());
+  personalDetailsPageContainer.appendChild(signupFormSubmitButton);
 
   mainSection.appendChild(personalDetailsPageContainer);
 };
