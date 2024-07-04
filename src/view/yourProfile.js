@@ -1,6 +1,10 @@
 import profilePictureSrc from "../assets/images/profile-picture.png";
 import cameraIconSrc from "../assets/icons/camera-icon.png";
-import { genereateStepCounter, createBackButton } from "./headingInfo";
+import {
+  genereateStepCounter,
+  createBackButton,
+  createSubmitButton,
+} from "./headingInfo";
 
 const generateYourProfilePage = () => {
   const mainSection = document.getElementById("main-section");
@@ -84,14 +88,6 @@ const createSignupForm = () => {
   profileSignupFormContainer.appendChild(profileSignupForm);
 
   return profileSignupFormContainer;
-};
-
-const createSubmitButton = () => {
-  const submitButton = document.createElement("button");
-
-  submitButton.innerHTML = 'Continue <i class = "fa-solid fa-arrow-right"></i>';
-
-  return submitButton;
 };
 
 export default generateYourProfilePage;

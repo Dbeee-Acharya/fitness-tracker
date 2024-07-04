@@ -21,4 +21,12 @@ const createBackButton = () => {
   return backButtonContainer;
 };
 
-export { genereateStepCounter, createBackButton };
+const createSubmitButton = () => {
+  const submitButton = document.createElement("button");
+
+  submitButton.innerHTML = 'Continue <i class = "fa-solid fa-arrow-right"></i>';
+
+  return submitButton;
+};
+
+export { genereateStepCounter, createBackButton, createSubmitButton };

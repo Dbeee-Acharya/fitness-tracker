@@ -1,5 +1,9 @@
 // Module to generate personal details page
-import { createBackButton, genereateStepCounter } from "./headingInfo";
+import {
+  createBackButton,
+  genereateStepCounter,
+  createSubmitButton,
+} from "./headingInfo";
 
 const generatePersonalDetailPage = () => {
   const mainSection = document.getElementById("main-section");
@@ -47,6 +51,7 @@ const generatePersonalDetailPage = () => {
   dateOfBirthInputField.setAttribute("value", "1997-12-22");
   dateOfBirthInputField.setAttribute("min", "1900-01-01");
   dateOfBirthInputField.setAttribute("max", "3000-12-31");
+  dateOfBirthInputField.required = true;
 
   dateOfBirthContainer.appendChild(dateOfBirthContainerHeader);
   dateOfBirthContainer.appendChild(dateOfBirthInputField);
@@ -67,16 +72,102 @@ const generatePersonalDetailPage = () => {
   addressContainer.appendChild(addressHeader);
   addressContainer.appendChild(addressInputField);
 
+  //heaight and weight
+  const heightWeightContainer = document.createElement("div");
+  heightWeightContainer.classList.add("height-wegith-container");
+
+  const heightContainer = document.createElement("div");
+  heightContainer.classList.add("height-container");
+
+  const heightLabel = document.createElement("label");
+  heightLabel.setAttribute("for", "height");
+  heightLabel.innerHTML = "Height <span>:</span>";
+
+  const inputGroup = document.createElement("div");
+  inputGroup.classList.add("input-group");
+
+  const heightInputField = document.createElement("input");
+  heightInputField.setAttribute("type", "number");
+  heightInputField.id = "height";
+  heightInputField.name = "height";
+  heightInputField.setAttribute("min", "50");
+  heightInputField.setAttribute("max", "220");
+  heightInputField.setAttribute("value", "50");
+  heightInputField.setAttribute("step", "1");
+  heightInputField.required = true;
+
+  const heightInputUnit = document.createElement("span");
+  heightInputUnit.textContent = "cm";
+
+  inputGroup.appendChild(heightInputField);
+  inputGroup.appendChild(heightInputUnit);
+
+  heightContainer.appendChild(heightLabel);
+  heightContainer.appendChild(inputGroup);
+
+  heightWeightContainer.appendChild(heightContainer);
+
+  const weightContainer = document.createElement("div");
+  weightContainer.classList.add("weight-container");
+
+  const weightLabel = document.createElement("label");
+  weightLabel.setAttribute("for", "weight");
+  weightLabel.innerHTML = "Weight <span>:</span>";
+
+  const weightInputGroup = document.createElement("div");
+  weightInputGroup.classList.add("input-group");
+
+  const weightInputField = document.createElement("input");
+  weightInputField.setAttribute("type", "number");
+  weightInputField.id = "weight";
+  weightInputField.name = "weight";
+  weightInputField.setAttribute("min", "20");
+  weightInputField.setAttribute("max", "220");
+  weightInputField.setAttribute("value", "50");
+  weightInputField.setAttribute("step", "1");
+  weightInputField.required = true;
+
+  const weightInputUnit = document.createElement("span");
+  weightInputUnit.textContent = "kg";
+
+  weightInputGroup.appendChild(weightInputField);
+  weightInputGroup.appendChild(weightInputUnit);
+
+  weightContainer.appendChild(weightLabel);
+  weightContainer.appendChild(weightInputGroup);
+
+  heightWeightContainer.appendChild(weightContainer);
+
+  //your health updates
+  const healthUpdatesContainer = document.createElement("div");
+  healthUpdatesContainer.classList.add("health-updates-container");
+
+  const healthUpdatesLabel = document.createElement("label");
+  healthUpdatesLabel.setAttribute("for", "healthUpdates");
+  healthUpdatesLabel.textContent = "Your Health Updates: ";
+
+  healthUpdatesContainer.appendChild(healthUpdatesLabel);
+
+  const healthUpdatesInputField = document.createElement("input");
+  healthUpdatesInputField.type = "text";
+  healthUpdatesInputField.placeholder = "Any allergies, medication, or others";
+  healthUpdatesInputField.name = "healthUpdates";
+
+  healthUpdatesContainer.appendChild(healthUpdatesInputField);
+
   //add elements to form
   personalDetailsForm.appendChild(genderSelectionContainer);
   personalDetailsForm.appendChild(dateOfBirthContainer);
   personalDetailsForm.appendChild(addressContainer);
+  personalDetailsForm.appendChild(heightWeightContainer);
+  personalDetailsForm.appendChild(healthUpdatesContainer);
 
   //adding elements to page container
   personalDetailsPageContainer.appendChild(createBackButton());
   personalDetailsPageContainer.appendChild(genereateStepCounter(2));
   personalDetailsPageContainer.appendChild(personalDetailsHeading);
   personalDetailsPageContainer.appendChild(personalDetailsForm);
+  personalDetailsPageContainer.appendChild(createSubmitButton());
 
   mainSection.appendChild(personalDetailsPageContainer);
 };
