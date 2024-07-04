@@ -1,4 +1,5 @@
 import "./style.scss";
-import { generateYourProfilePage } from "./view/yourProfile";
+import generateYourProfilePage from "./view/yourProfile";
+import generatePersonalDetailPage from "./view/personalDetails";
 
-generateYourProfilePage();
+generatePersonalDetailPage();

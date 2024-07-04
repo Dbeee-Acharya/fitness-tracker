@@ -1,6 +1,6 @@
 import profilePictureSrc from "../assets/images/profile-picture.png";
 import cameraIconSrc from "../assets/icons/camera-icon.png";
-import genereateStepCounter from "./stepCounterTop";
+import { genereateStepCounter, createBackButton } from "./headingInfo";
 
 const generateYourProfilePage = () => {
   const mainSection = document.getElementById("main-section");
@@ -18,10 +18,14 @@ const generateYourProfilePage = () => {
   signupFormSubmitButton.setAttribute("id", "your-profile-button");
 
   yourProfileInfo.innerHTML =
-    "<h4>Your Profile</h4> \n <p>Update your profile to get better fitness result from trainer</p>";
+    "<h4>Your Profile</h4> \n <p>Update your profile to get better fitness result from <br> trainer</p>";
 
   const picture = getImage(profilePictureSrc);
-  profilePicture.appendChild(picture);
+
+  const profilePictureContainer = document.createElement("div");
+  profilePictureContainer.classList.add("profile-picture-container");
+  profilePictureContainer.appendChild(picture);
+  profilePicture.appendChild(profilePictureContainer);
   profilePicture.appendChild(getIcon());
 
   signupFormSubmitButton.appendChild(createSubmitButton());
@@ -37,7 +41,7 @@ const generateYourProfilePage = () => {
 };
 
 const getImage = (pictureSrc) => {
-  const picture = new Image();
+  const picture = new Image(131, 131);
   picture.src = pictureSrc;
 
   return picture;
@@ -90,17 +94,4 @@ const createSubmitButton = () => {
   return submitButton;
 };
 
-const createBackButton = () => {
-  const backButtonContainer = document.createElement("div");
-  const backButton = document.createElement("i");
-
-  backButtonContainer.classList.add("back-button");
-  backButton.classList.add("fa-arrow-left");
-  backButton.classList.add("fa-solid");
-
-  backButtonContainer.appendChild(backButton);
-
-  return backButtonContainer;
-};
-
-export { generateYourProfilePage };
+export default generateYourProfilePage;
