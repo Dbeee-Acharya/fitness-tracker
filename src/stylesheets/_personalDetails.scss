@@ -32,15 +32,138 @@
 
   .setup-page-info {
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
     h4 {
       color: black;
       font-weight: 500;
+    }
+
+    p {
+      color: $text-light-grey;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 
   .personal-details-form {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
+    margin-bottom: 40px;
+    width: 100%;
+
+    .gender-selection-container {
+      h4 {
+        margin-bottom: 16px;
+        color: $heading-color-grey;
+      }
+
+      label {
+        margin-right: 16px;
+
+        input {
+          margin-right: 16px;
+        }
+      }
+    }
+
+    .date-of-birth-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      input {
+        border: 0.5px solid $form-border-light-grey;
+        height: 44px;
+        width: 100%;
+        border-radius: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+    }
+
+    .address-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      input {
+        border: 0.5px solid $form-border-light-grey;
+        height: 44px;
+        width: 100%;
+        border-radius: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+    }
+
+    .height-weight-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .height-container {
+        span {
+          margin-left: 3px;
+        }
+      }
+
+      div {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        label {
+          display: flex;
+          gap: 24px;
+          color: $heading-color-grey;
+          font-weight: 500;
+        }
+      }
+
+      .input-group {
+        display: inline;
+        border: 0.5px solid $form-border-light-grey;
+        height: 44px;
+        width: 185px;
+        border-radius: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 16px;
+
+        input {
+          border: none;
+          position: relative;
+          font-size: 16px;
+        }
+
+        span {
+          position: absolute;
+          left: 160px;
+          color: $text-light-grey;
+        }
+      }
+    }
+
+    .health-updates-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      input {
+        border: 0.5px solid $form-border-light-grey;
+        height: 44px;
+        width: 100%;
+        border-radius: 6px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+    }
   }
 }

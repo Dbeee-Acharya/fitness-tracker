@@ -74,7 +74,7 @@ const generatePersonalDetailPage = () => {
 
   //heaight and weight
   const heightWeightContainer = document.createElement("div");
-  heightWeightContainer.classList.add("height-wegith-container");
+  heightWeightContainer.classList.add("height-weight-container");
 
   const heightContainer = document.createElement("div");
   heightContainer.classList.add("height-container");
@@ -142,7 +142,7 @@ const generatePersonalDetailPage = () => {
   const healthUpdatesContainer = document.createElement("div");
   healthUpdatesContainer.classList.add("health-updates-container");
 
-  const healthUpdatesLabel = document.createElement("label");
+  const healthUpdatesLabel = document.createElement("h4");
   healthUpdatesLabel.setAttribute("for", "healthUpdates");
   healthUpdatesLabel.textContent = "Your Health Updates: ";
 
